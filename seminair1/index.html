@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <h2>{{message}}</h2>
+        <p>Товар в корзине {{countProduct}}</p>
+        <button @click="addProduct">Купить</button>
+        <div v-for="product in cart" :key="product.id">
+            <p>Name: {{product.name}}</p>
+            <button @click="addProduct(product)">{{product.buttonText}}</button>
+        </div>
+
+
+        <button @click="isTrue=true">Мне есть 14 лет</button>
+        <button @click="isTrue=false">Мне ещё нет 14 лет</button>
+        <div v-if="isTrue">14+ контент</div>
+        <div v-else>доступ закрыт</div>
+        <button @click="showContent = !showContent">Показать ещё</button>
+        <button v-if="showContent">Ещё контент</button><br/>
+        <button @click="getRandomNumber"> Сгенерировать число</button>
+        <div>{{randomNumber}}</div>
+        <div>{{numberInfo}}</div>
+
+
+
+    </div>
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                message: "Hello vue",
+                countProduct: 0,
+                cart: [{
+                    id: 1,
+                    name: "Product1",
+                    inCart: false,
+                    buttonText: 'Buy',
+                }, {
+                    id: 2,
+                    name: "Product2",
+                    inCart: false,
+                    buttonText: 'Buy',
+                }, {
+                    id: 3,
+                    name: "Product3",
+                    inCart: false,
+                    buttonText: 'Buy',
+                }, {
+                    id: 4,
+                    name: "Product4",
+                    inCart: false,
+                    buttonText: 'Buy',
+                }, ],
+                isTrue: false,
+                showContent: false,
+                randomNumber: 0,
+            },
+
+            methods: {
+                addProduct(product) {
+                    if (!product.inCart) {
+                        product.inCart = true;
+                        this.countProduct++;
+                        product.buttonText = 'Товар в корзине';
+                    }
+                },
+
+                getRandomNumber() {
+                    this.randomNumber = Math.floor(Math.random() * 10 + 1);
+                },
+
+            },
+            computed: {
+                numberInfo() {
+                    if (this.randomNumber < 5) {
+                        return "Число меньше 5"
+                    } else if (this.randomNumber === 10) {
+                        return "Число равно 10"
+                    } else {
+                        return "Число больше или равно 5 и меньше или равно 9"
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
+
+<!--v-for="(item, index) in items" для удаления-->

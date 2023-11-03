@@ -1,0 +1,17 @@
+@import "vars";
+@import "mixins";
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body,
+a {
+    text-decoration: none;
+    font-family: Lato;
+}
+
+.center {
+    @include contenCenter();
+}
