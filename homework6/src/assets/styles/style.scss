@@ -1,0 +1,945 @@
+@import "vars";
+@import "mixins";
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body,
+a {
+    text-decoration: none;
+    font-family: Lato;
+}
+
+.center {
+    @include contenCenter();
+}
+
+.header__content {
+    margin-top: 53px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    &__left {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    &__left.logo {
+        width: 33.998px;
+        height: 34px;
+        flex-shrink: 0;
+    }
+    &__left.title {
+        @include titleText();
+        font-size: 40px;
+        line-height: 125%;
+    }
+    &__right {
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        gap: 48px;
+    }
+    &__right.link {
+        color: #292f36;
+        text-align: center;
+        font-family: Jost;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 125%;
+        /* 25px */
+    }
+}
+
+.main__top {
+    margin-top: 65px;
+    &__top-div {
+        background: url(B:/study/frontend/JavaScript/VUEjs/homework4/src/assets/images/main_top_background.png), lightgray 50% / cover no-repeat;
+        height: 755px;
+        display: flex;
+        align-items: center;
+        border-radius: 60px;
+        padding-left: 44px;
+        &__content {
+            max-width: 434px;
+        }
+        &__content.title {
+            @include titleText();
+            font-size: 65px;
+            line-height: 125%;
+            margin-bottom: 18px;
+        }
+        &__content.description {
+            @include contentText();
+            font-size: 22px;
+            line-height: 150%;
+            /* 33px */
+            letter-spacing: 0.22px;
+            margin-bottom: 21px;
+        }
+        &__content.button {
+            color: #fff;
+            text-align: center;
+            font-family: Jost;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 125%;
+            /* 22.5px */
+            letter-spacing: 0.36px;
+            display: flex;
+            padding: 26px 49px 26px 48px;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            border-radius: 18px;
+            background: #292f36;
+            box-shadow: 0px 10px 20px 0px rgba(192, 192, 192, 0.35);
+            cursor: pointer;
+        }
+    }
+    &__center-div {
+        margin-top: 93px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        &__title {
+            @include titleText();
+            font-size: 50px;
+            line-height: 125%;
+            /* 62.5px */
+            letter-spacing: 1px;
+        }
+        &__description {
+            @include contentText();
+            text-align: center;
+            line-height: 150%;
+            /* 33px */
+            letter-spacing: 0.22px;
+            max-width: 737px;
+        }
+    }
+    &__bottom-div {
+        margin-top: 93px;
+        display: grid;
+        grid-auto-flow: dense;
+        grid-template-columns: repeat(auto-fit, minmax(547px, 1fr));
+        gap: 56px 104px;
+        &__card {
+            width: 547px;
+            height: 619px;
+            &__top-part {
+                width: 547px;
+                height: 525px;
+            }
+            &__top-part.card1 {
+                background: url(B:/study/frontend/JavaScript/VUEjs/homework4/src/assets/images/main_center_card1.png), lightgray 50% / cover no-repeat;
+                border-radius: 0px 60px 0px 0px;
+            }
+            &__top-part.card2 {
+                background: url(B:/study/frontend/JavaScript/VUEjs/homework4/src/assets/images/main_center_card2.png), lightgray 50% / cover no-repeat;
+                border-radius: 60px 0px 0px 0px;
+            }
+            &__top-part.card3 {
+                background: url(B:/study/frontend/JavaScript/VUEjs/homework4/src/assets/images/main_center_card3.png), lightgray 50% / cover no-repeat;
+                border-radius: 0px 0px 60px 0px;
+            }
+            &__top-part.card4 {
+                background: url(B:/study/frontend/JavaScript/VUEjs/homework4/src/assets/images/main_center_card4.png), lightgray 50% / cover no-repeat;
+                border-radius: 0px 0px 0px 60px;
+            }
+            &__bottom-part {
+                display: flex;
+                flex-flow: row;
+                align-items: center;
+                justify-content: space-between;
+                margin-top: 24px;
+                &__text-box.title {
+                    @include titleText();
+                    font-size: 25px;
+                    line-height: 125%;
+                    /* 31.25px */
+                    letter-spacing: 0.5px;
+                }
+                &__text-box.description {
+                    @include contentText();
+                    font-size: 22px;
+                    line-height: 150%;
+                    /* 33px */
+                    letter-spacing: 0.22px;
+                }
+            }
+        }
+    }
+}
+
+.main__center {
+    margin-top: 96px;
+    padding-top: 151px;
+    padding-bottom: 151px;
+    background-color: #f4f0ec;
+    &__content {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        &__box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+            padding-right: 56px;
+            border-right: 1px solid $siteMainCenterNumbersColor;
+            &__number {
+                @include numbersText();
+            }
+            &__description {
+                @include contentText();
+                font-size: 22px;
+                line-height: 150%;
+                /* 33px */
+                letter-spacing: 0.22px;
+            }
+        }
+        &__box:last-child {
+            border: none;
+            padding-right: 0px;
+        }
+    }
+}
+
+.main__bottom {
+    &__heading {
+        margin-top: 93px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        &__title {
+            @include titleText();
+            font-size: 50px;
+            line-height: 125%;
+            /* 62.5px */
+            letter-spacing: 1px;
+        }
+        &__description {
+            @include contentText();
+            text-align: center;
+            line-height: 150%;
+            /* 33px */
+            letter-spacing: 0.22px;
+            max-width: 737px;
+        }
+    }
+    &__content {
+        margin-top: 52px;
+        display: grid;
+        grid-auto-flow: dense;
+        grid-template-columns: repeat(auto-fit, minmax(381px, 1fr));
+    }
+    &__content-card {
+        border-radius: 62px;
+        border: 1px solid #e7e7e7;
+        box-shadow: 0px 10px 30px 0px rgba(255, 255, 255, 0.25);
+        padding: 21px;
+        max-width: 381px;
+        max-height: 521px;
+        &__top {
+            display: flex;
+            align-items: flex-end;
+            &__description-box {
+                margin-left: 20px;
+                margin-bottom: 20px;
+                border-radius: 8px 8px 8px 0px;
+                background-color: white;
+                height: 41px;
+                flex-shrink: 0;
+            }
+            &__description-box.description {
+                @include contentText();
+                font-size: 16px;
+                line-height: 150%;
+                /* 24px */
+                letter-spacing: 0.16px;
+                text-transform: capitalize;
+                display: flex;
+                align-items: center;
+                margin: 0px;
+                padding: 10px;
+            }
+        }
+        &__top.card1 {
+            background: url(B:/study/frontend/JavaScript/VUEjs/homework4/src/assets/images/main_bottom_card1.png), lightgray 50% / cover no-repeat;
+            width: 340px;
+            height: 290px;
+            border-radius: 62px 62px 0px 0px;
+        }
+        &__top.card2 {
+            background: url(B:/study/frontend/JavaScript/VUEjs/homework4/src/assets/images/main_bottom_card2.png), lightgray 50% / cover no-repeat;
+            width: 340px;
+            height: 290px;
+            border-radius: 62px 62px 0px 0px;
+        }
+        &__top.card3 {
+            background: url(B:/study/frontend/JavaScript/VUEjs/homework4/src/assets/images/main_bottom_card3.png), lightgray 50% / cover no-repeat;
+            width: 340px;
+            height: 290px;
+            border-radius: 62px 62px 0px 0px;
+        }
+        &__title {
+            margin-top: 21px;
+            font-size: 25px;
+            line-height: 125%;
+            /* 31.25px */
+            letter-spacing: 0.5px;
+        }
+        &__bottom-part {
+            margin-top: 30px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            &__text-box {
+                &__date {
+                    @include contentText();
+                    font-size: 16px;
+                    line-height: 150%;
+                    /* 24px */
+                    letter-spacing: 0.16px;
+                    text-transform: capitalize;
+                }
+            }
+        }
+    }
+    &__content-card:nth-child(2n) {
+        background-color: #f4f0ec;
+    }
+}
+
+footer {
+    padding-bottom: 134px;
+}
+
+.footer__content {
+    margin-top: 96px;
+    display: grid;
+    grid-auto-flow: dense;
+    grid-template-columns: repeat(auto-fit, 393px 125px 120px 258px);
+    gap: 101px;
+    &__column {
+        &__title {
+            @include titleText();
+            font-size: 25px;
+            line-height: 125%;
+            /* 31.25px */
+            &__box {
+                display: flex;
+                align-items: center;
+                flex-direction: row;
+                gap: 10px;
+            }
+            &__box.logo {
+                width: 33.998px;
+                height: 34px;
+                flex-shrink: 0;
+            }
+            &__box.title {
+                @include titleText();
+                font-size: 40px;
+                line-height: 125%;
+            }
+        }
+        &__title.column2 {
+            margin-bottom: 9px;
+        }
+        &__description {
+            margin-top: 18px;
+            @include contentText();
+            font-size: 22px;
+            line-height: 150%;
+            /* 33px */
+            letter-spacing: 0.22px;
+        }
+        &__social {
+            margin-top: 30px;
+            display: flex;
+            gap: 54px;
+            &__twitter {
+                width: 20px;
+                height: 15px;
+            }
+            &__linkedin {
+                width: 17px;
+                height: 15px;
+            }
+        }
+        &__navigation {
+            display: flex;
+            flex-direction: column;
+        }
+        &__navigation.link {
+            @include contentText();
+            font-size: 22px;
+            line-height: 300%;
+            /* 66px */
+            letter-spacing: 0.22px;
+        }
+        &__title.column4 {
+            margin-bottom: 26px;
+        }
+        &__contacts {
+            @include contentText();
+            font-size: 22px;
+            line-height: 150%;
+            /* 33px */
+            letter-spacing: 0.22px;
+        }
+        &__contacts.mail {
+            line-height: 380%;
+        }
+    }
+}
+
+.main-blog__top {
+    display: flex;
+    height: 358px;
+    margin-top: 44px;
+    background: url(B:/study/frontend/JavaScript/VUEjs/homework4/src/assets/images//main-top.jpg), lightgray 50%;
+    background-size: cover;
+    align-items: flex-end;
+    &__div {
+        background-color: white;
+        display: flex;
+        width: 503px;
+        padding: 41px 78px;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 37px 37px 0px 0px;
+    }
+    &__div.title {
+        @include titleText();
+        font-size: 50px;
+        line-height: 125%;
+        /* 62.5px */
+        padding: 0;
+    }
+    &__div.description {
+        @include contentText();
+        font-size: 22px;
+        line-height: 150%;
+        /* 33px */
+        letter-spacing: 0.22px;
+        padding: 0;
+    }
+}
+
+.main-blog__center {
+    margin-top: 200px;
+    display: flex;
+    width: 1201px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 27px;
+    &__title {
+        @include titleText();
+        font-size: 50px;
+        line-height: 125%;
+        /* 62.5px */
+        letter-spacing: 1px;
+    }
+    &__content {
+        display: flex;
+        width: 1201px;
+        padding: 22px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        border-radius: 62px;
+        border: 1px solid #E7E7E7;
+        box-shadow: 0px 10px 30px 0px rgba(255, 255, 255, 0.25);
+        &__post {
+            display: flex;
+            width: 1157px;
+            align-items: center;
+            gap: 65px;
+            &__img-box {
+                width: 569px;
+                height: 478px;
+                flex-shrink: 0;
+                background: url(B:/study/frontend/JavaScript/VUEjs/homework4/src/assets/images//main-center.jpg), lightgray 50% / cover no-repeat;
+                border-radius: 45px;
+            }
+            &__text-box {
+                display: flex;
+                width: 489px;
+                flex-direction: column;
+                align-items: flex-start;
+                flex-shrink: 0;
+                &__description-box {
+                    padding-bottom: 41px;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 21px;
+                }
+                &__description-box.description {
+                    color: #4D5053;
+                    font-family: Jost;
+                    font-size: 22px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 150%;
+                    /* 33px */
+                    letter-spacing: 0.22px;
+                    padding: 0px;
+                }
+                &__date {
+                    display: flex;
+                    width: 489px;
+                    align-items: center;
+                    gap: 214px;
+                }
+                &__date.date {
+                    @include contentText();
+                    font-size: 16px;
+                    line-height: 150%;
+                    /* 24px */
+                    letter-spacing: 0.16px;
+                    text-transform: capitalize;
+                }
+            }
+            &__text-box.title {
+                @include titleText();
+                font-size: 25px;
+                line-height: 125%;
+                /* 31.25px */
+                letter-spacing: 0.5px;
+                padding-bottom: 21px;
+            }
+        }
+    }
+}
+
+.main-blog__bottom {
+    &__heading {
+        margin-top: 150px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        &__title {
+            @include titleText();
+            font-size: 50px;
+            line-height: 125%;
+            /* 62.5px */
+            letter-spacing: 1px;
+        }
+    }
+    &__products {
+        gap: 28px 30px;
+        margin-top: 30px;
+        display: grid;
+        grid-auto-flow: dense;
+        grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+        &__card {
+            border-radius: 62px;
+            border: 1px solid #e7e7e7;
+            box-shadow: 0px 10px 30px 0px rgba(255, 255, 255, 0.25);
+            padding: 21px;
+            max-width: 381px;
+            max-height: 521px;
+            &__img-box {
+                position: relative;
+            }
+            &__img-box.img {
+                border-radius: 40px 40px 0px 0px;
+            }
+            &__img-box.info {
+                position: absolute;
+                top: 229px;
+                left: 20px;
+                display: inline-flex;
+                padding: 8px 10px;
+                justify-content: center;
+                align-items: center;
+                gap: 10px;
+                border-radius: 8px 8px 8px 0px;
+                background: #FFF;
+                color: #4D5053;
+                font-size: 16px;
+                @include contentText();
+                /* 24px */
+                letter-spacing: 0.16px;
+                text-transform: capitalize;
+            }
+            &__description-box {
+                display: flex;
+                width: 340px;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 20px;
+                &__title {
+                    @include titleText();
+                    width: 305px;
+                    margin-top: 10px;
+                    font-size: 25px;
+                    line-height: 125%;
+                    /* 31.25px */
+                    letter-spacing: 0.5px;
+                }
+                &__info {
+                    display: flex;
+                    width: 340px;
+                    align-items: center;
+                    justify-content: space-between;
+                    &__date {
+                        @include contentText();
+                        line-height: 150%;
+                        /* 24px */
+                        letter-spacing: 0.16px;
+                        text-transform: capitalize;
+                    }
+                }
+            }
+        }
+    }
+    &__pagination-box {
+        margin-top: 51px;
+        display: flex;
+        justify-content: center;
+        &__pagination {
+            display: flex;
+            width: 268px;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 20px;
+        }
+        &__pagination.text {
+            @include contentText();
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 150%;
+            /* 24px */
+            text-transform: capitalize;
+        }
+    }
+}
+
+.main-details__top {
+    display: flex;
+    height: 358px;
+    margin-top: 44px;
+    background: url(B:/study/frontend/JavaScript/VUEjs/homework4/src/assets/images/details_main.jpg), lightgray 50%;
+    background-size: cover;
+    align-items: flex-end;
+}
+
+.main-details__center {
+    margin-top: 200px;
+    display: flex;
+    width: 1201px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 27px;
+    &__content {
+        display: flex;
+        width: 1201px;
+        align-items: flex-start;
+        gap: 52px;
+    }
+    &__content-posts {
+        width: 804px;
+        &__post {
+            max-width: 799px;
+            margin-bottom: 27px;
+            &__title {
+                @include titleText();
+                font-size: 50px;
+                line-height: 125%;
+                /* 62.5px */
+                letter-spacing: 1px;
+                padding-bottom: 20px;
+            }
+            &__image {
+                max-width: 799px;
+                border-radius: 45px;
+                max-height: 535px;
+                margin-bottom: 35px;
+            }
+            &__info {
+                margin-top: 11px;
+                display: flex;
+                align-items: center;
+                flex-direction: row;
+                justify-content: flex-start;
+                margin-bottom: 48px;
+            }
+            &__date {
+                margin-right: 406px;
+                @include contentText();
+                font-size: 16px;
+                line-height: 150%;
+                /* 24px */
+                letter-spacing: 0.16px;
+                text-transform: capitalize;
+            }
+            &__tags {
+                @include contentText();
+                font-size: 16px;
+                line-height: 150%;
+                /* 24px */
+                letter-spacing: 0.16px;
+                text-transform: capitalize;
+            }
+            &__text {
+                @include contentText();
+                font-size: 22px;
+                line-height: 150%;
+                /* 33px */
+                letter-spacing: 0.22px;
+            }
+            &__content {
+                display: flex;
+                flex-direction: column;
+            }
+            &__list {
+                display: flex;
+                margin-top: 24px;
+                width: 732.389px;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 32px;
+                list-style-type: none;
+                counter-reset: num;
+                margin: 0 0 0 35px;
+                padding: 15px 0 5px 0;
+                font-size: 18px;
+                &__element {
+                    @include contentText();
+                    font-size: 22px;
+                    line-height: 150%;
+                    /* 33px */
+                    letter-spacing: 0.22px;
+                }
+            }
+            &__list li {
+                position: relative;
+                margin: 0 0 0 0;
+                padding: 0 0 10px 0;
+            }
+            &__list li:before {
+                content: counter(num) ".";
+                counter-increment: num;
+                display: inline-block;
+                position: absolute;
+                top: 0px;
+                left: -26px;
+                width: 20px;
+                color: #cda274;
+                text-align: right;
+            }
+            &__quote {
+                display: flex;
+                padding: 36px 227px 53px 227px;
+                gap: 10px;
+                border-radius: 50px;
+                background: #f4f0ec;
+                flex-direction: column;
+                align-items: center;
+            }
+            &__quotation-marks {
+                width: 106px;
+                height: 100px;
+                color: #cda274;
+                text-align: center;
+                font-family: DM Serif Display;
+                font-size: 200px;
+                font-style: italic;
+                font-weight: 400;
+                line-height: 125%;
+                /* 250px */
+                letter-spacing: 4px;
+            }
+            &__quote-text {
+                color: #cda274;
+                text-align: center;
+                font-family: DM Serif Display;
+                font-size: 25px;
+                font-style: italic;
+                font-weight: 400;
+                line-height: 125%;
+                /* 31.25px */
+                letter-spacing: 0.5px;
+            }
+        }
+    }
+    &__content-filters {
+        display: flex;
+        width: 345px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 24px;
+        &__title {
+            @include titleText();
+            font-size: 25px;
+            line-height: 125%;
+            /* 31.25px */
+            letter-spacing: 0.5px;
+        }
+        &__items {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            max-width: 335px;
+            font-size: 18px;
+            gap: 10px;
+            &__item {
+                @include contentText();
+                font-size: 18px;
+                line-height: 125%;
+                /* 22.5px */
+                letter-spacing: 0.36px;
+                border-radius: 10px;
+                background: #f4f0ec;
+                display: flex;
+                padding: 9px 30px;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+            }
+            &__item:hover {
+                color: white;
+                background: black;
+            }
+        }
+    }
+}
+
+.hide {
+    display: none;
+}
+
+.main-project__top {
+    display: flex;
+    height: 358px;
+    margin-top: 44px;
+    margin-bottom: 200px;
+    background: url(B:/study/frontend/JavaScript/VUEjs/homework6/src/assets/images//Project-main-img.jpg), lightgray 50%;
+    background-size: cover;
+    align-items: flex-end;
+    &__div {
+        background-color: white;
+        display: flex;
+        width: 503px;
+        padding: 41px 125px;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 37px 37px 0px 0px;
+    }
+    &__div.project-title {
+        @include titleText();
+        font-size: 50px;
+        line-height: 125%;
+        /* 62.5px */
+        padding: 0;
+    }
+    &__div.project-subtitle {
+        @include contentText();
+        font-size: 22px;
+        line-height: 150%;
+        /* 33px */
+        letter-spacing: 0.22px;
+        padding: 0;
+    }
+}
+
+.main-project__projects {
+    gap: 61px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &__categories.category {
+        background-color: white;
+        display: flex;
+        padding: 26px 66px;
+        justify-content: center;
+        border-radius: 18px;
+        @include contentText();
+        font-size: 18px;
+        cursor: pointer;
+        border: none
+    }
+    &__categories.active-category {
+        @include contentText();
+        font-size: 18px;
+        background-color: #cda274;
+        color: white;
+        padding: 26px 66px;
+    }
+    &__categories {
+        display: flex;
+        max-width: 880px;
+        flex-direction: row;
+        justify-content: center;
+        border-radius: 18px;
+        border: 1px solid #cda274;
+        &__category-items {
+            display: grid;
+            grid-template-columns: repeat(2, 585px);
+            justify-items: center;
+            justify-content: center;
+            align-content: center;
+            gap: 30px;
+        }
+        &__category-item {
+            display: flex;
+            gap: 24px;
+            flex-direction: column;
+        }
+        &__category-item.title {
+            @include titleText();
+            font-size: 25px;
+            line-height: 125%;
+            /* 31.25px */
+            letter-spacing: 0.5px;
+        }
+        &__category-item.text {
+            @include contentText();
+            color: #4D5053;
+            font-size: 22px;
+            line-height: 150%;
+            /* 33px */
+            letter-spacing: 0.22px;
+        }
+        &__category-item-info {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+        &__pagination-box {
+            display: flex;
+            justify-content: center;
+            &__pagination {
+                display: flex;
+                width: 268px;
+                justify-content: center;
+                align-items: flex-start;
+                gap: 20px;
+            }
+            &__pagination.text {
+                @include contentText();
+                font-size: 16px;
+                font-weight: 500;
+                line-height: 150%;
+                /* 24px */
+                text-transform: capitalize;
+            }
+        }
+    }
+}
